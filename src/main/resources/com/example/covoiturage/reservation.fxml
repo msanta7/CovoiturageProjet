@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!-- ROOT -->
+
+<AnchorPane prefHeight="639.0" prefWidth="1080" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.covoiturage.ReservationController">
+   <children>
+
+      <!-- DÉTAILS DU TRAJET (card) -->
+      <AnchorPane layoutX="36.0" layoutY="28.0" prefHeight="200.0" prefWidth="526.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 14, 0, 0, 6);">
+         <children>
+            <Text layoutX="20.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-fill: #1f2937;" text="Détails du trajet">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+
+            <!-- labels -->
+            <Text layoutX="26.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #64748b;" text="Départ" />
+            <Text layoutX="129.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #64748b;" text="Arrivée" />
+
+            <Text layoutX="26.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #64748b;" text="Date" />
+            <Text layoutX="191.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #64748b;" text="Heure" />
+            <Text layoutX="389.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #64748b;" text="Durée" />
+
+            <!-- values -->
+            <Text fx:id="departVille" layoutX="27.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-fill: #0f172a;" text="Oran" />
+            <Text fx:id="arriveeVille" layoutX="134.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-fill: #0f172a;" text="Alger" />
+            <Text fx:id="date" layoutX="27.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-fill: #0f172a;" text="15 Janvier 2024" />
+            <Text fx:id="heure" layoutX="193.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-fill: #0f172a;" text="14:30" />
+            <Text fx:id="duree" layoutX="389.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-fill: #0f172a;" text="4h 30min" />
+         </children>
+      </AnchorPane>
+
+      <!-- CONDUCTEUR (card) -->
+      <AnchorPane layoutX="623.0" layoutY="28.0" prefHeight="200.0" prefWidth="383.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 18; -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 14, 0, 0, 6);">
+         <children>
+            <Text layoutX="21.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-fill: #1f2937;" text="Conducteur">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+
+            <ImageView fitHeight="59.0" fitWidth="50.0" layoutX="21.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../profile.png" />
+               </image>
+            </ImageView>
+
+            <Text fx:id="conducteurName" layoutX="85.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #0f172a;" text="Ahmed" />
+
+            <!-- rating squares (icons unchanged) -->
+            <ImageView fitHeight="15.0" fitWidth="14.0" layoutX="88.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image><Image url="@../../../yellow.PNG" /></image>
+            </ImageView>
+            <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="111.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image><Image url="@../../../yellow.PNG" /></image>
+            </ImageView>
+            <ImageView fitHeight="15.0" fitWidth="14.0" layoutX="133.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image><Image url="@../../../yellow.PNG" /></image>
+            </ImageView>
+            <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="154.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image><Image url="@../../../yellow.PNG" /></image>
+            </ImageView>
+
+            <Text layoutX="174.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #374151;" text="4.8 (127 avis)" />
+
+            <!-- small labels -->
+            <Text layoutX="19.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #6b7280;" text="Trajets effectués" />
+            <Text layoutX="19.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #6b7280;" text="Membre depuis" />
+            <Text layoutX="20.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #6b7280;" text="Véhicule" />
+
+            <!-- values -->
+            <Text layoutX="308.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #0f172a;" text="342" />
+            <Text layoutX="301.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #0f172a;" text="2024" />
+            <Text layoutX="286.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #0f172a;" text="Fiat 500" />
+         </children>
+      </AnchorPane>
+
+      <!-- INFORMATIONS DU PASSAGER (card) -->
+      <AnchorPane layoutX="32.0" layoutY="251.0" prefHeight="354.0" prefWidth="521.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 22; -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 14, 0, 0, 6);">
+         <children>
+            <Text layoutX="25.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-fill: #1f2937;" text="Informations du passager">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+
+            <!-- TextFields labels -->
+            <Text layoutX="32.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #374151;" text="Nom" />
+            <Text layoutX="289.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #374151;" text="Prénom" />
+            <Text layoutX="31.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #374151;" text="Email" />
+            <Text layoutX="289.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #374151;" text="Téléphone" />
+
+            <!-- TextFields -->
+            <TextField fx:id="prenomPass" layoutX="284.0" layoutY="99.0" prefHeight="30.0" prefWidth="205.0" style="-fx-background-color: #F8FAFC; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E6EEF6; -fx-padding: 8; -fx-font-size: 14px;" />
+            <TextField fx:id="nomPass" layoutX="25.0" layoutY="99.0" prefHeight="30.0" prefWidth="205.0" style="-fx-background-color: #F8FAFC; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E6EEF6; -fx-padding: 8; -fx-font-size: 14px;" />
+            <TextField fx:id="emailPass" layoutX="25.0" layoutY="177.0" prefHeight="30.0" prefWidth="205.0" style="-fx-background-color: #F8FAFC; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E6EEF6; -fx-padding: 8; -fx-font-size: 14px;" />
+            <TextField fx:id="telPass" layoutX="284.0" layoutY="177.0" prefHeight="30.0" prefWidth="205.0" style="-fx-background-color: #F8FAFC; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E6EEF6; -fx-padding: 8; -fx-font-size: 14px;" />
+
+            <Text layoutX="30.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #374151;" text="Nombre de places" />
+
+            <TextField fx:id="nbrPlace" layoutX="36.0" layoutY="278.0" prefHeight="26.0" prefWidth="34.0" style="-fx-background-color: white; -fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #E6EEF6; -fx-padding: 4; -fx-font-size: 14px; -fx-alignment: CENTER;" />
+         </children>
+      </AnchorPane>
+
+      <!-- RÉCAPITULATIF (card) -->
+      <AnchorPane layoutX="623.0" layoutY="260.0" prefHeight="281.0" prefWidth="383.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 14, 0, 0, 6);">
+         <children>
+            <Text layoutX="20.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-fill: #1f2937;" text="Récapitulatif">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+
+            <!-- labels -->
+            <Text layoutX="27.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #6b7280;" text="Prix par place" />
+            <Text layoutX="27.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #6b7280;" text="Nombre de places" />
+            <Text layoutX="27.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 13px; -fx-fill: #6b7280;" text="Frais de service" />
+
+            <!-- values -->
+            <Text fx:id="prix" layoutX="282.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-fill: #0f172a;" text="800 DA" />
+            <Text fx:id="nbrPlaceFin" layoutX="307.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-fill: #0f172a;" text="x 1" />
+            <Text fx:id="fraisService" layoutX="294.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-fill: #0f172a;" text="0 DA" />
+
+            <Text layoutX="37.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16px; -fx-fill: #374151; -fx-font-weight: bold;" text="Totale" />
+
+            <Text fx:id="totalePrix" layoutX="150.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-fill: #16a34a; -fx-font-weight: bold;" text="800 DA" />
+         </children>
+      </AnchorPane>
+
+      <!-- BOUTON CONFIRMER -->
+      <Button fx:id="confirmer" layoutX="623.0" layoutY="555.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="383.0" style="-fx-background-color: #16a34a; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(16,163,79,0.18), 8,0,0,4);" text="Confirmer la réservation" />
+
+   </children>
+
+</AnchorPane>

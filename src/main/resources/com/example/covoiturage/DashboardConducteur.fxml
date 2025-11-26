@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="669.0" prefWidth="1080.0" style="-fx-background-color: #f5f6fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.covoiturage.DashboardConducteurController">
+
+    <children>
+
+        <!-- ===================== MENU ===================== -->
+        <AnchorPane id="menu" layoutX="0" layoutY="0" prefHeight="669.0" prefWidth="233.0" style="-fx-background-color: #ffffff; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10,0,0,0);">
+
+            <children>
+
+                <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="71.0" layoutY="9.0" preserveRatio="true">
+               <image>
+                  <Image url="@../../../logo.png" />
+               </image></ImageView>
+
+                <Text layoutX="60" layoutY="110" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Covoiturage" />
+
+                <!-- Dashboard -->
+                <AnchorPane layoutX="10" layoutY="152.0" prefHeight="53.0" prefWidth="210">
+                    <children>
+                        <ImageView fitHeight="20" fitWidth="20" layoutX="14" layoutY="12" preserveRatio="true">
+                            <image><Image url="@../../../dashboard.PNG" /></image>
+                        </ImageView>
+
+                        <Button fx:id="dashboardButton" layoutX="39" layoutY="2" onAction="#handleProfileButton" prefHeight="45" prefWidth="152" style="-fx-background-color: #dff0ff; -fx-background-radius: 8;                                        -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT;                                        -fx-padding: 10 15; -fx-font-size: 16px;                                        -fx-font-family: 'Segoe UI';" text="Tableau de bord" />
+                    </children>
+                </AnchorPane>
+
+                <!-- Profil -->
+                <AnchorPane layoutX="10" layoutY="209" prefHeight="40" prefWidth="210">
+                    <children>
+                        <ImageView fitHeight="20" fitWidth="20" layoutX="12" layoutY="16" preserveRatio="true">
+                            <image><Image url="@../../../profileDash.PNG" /></image>
+                        </ImageView>
+
+                        <Button id="profileButton" fx:id="profileButton" layoutX="35" layoutY="5" onAction="#handleProfileButton" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8;                                        -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT;                                        -fx-padding: 10 15; -fx-font-size: 16px;                                        -fx-font-family: 'Segoe UI';" text="Profile" />
+                    </children>
+                </AnchorPane>
+
+                <!-- Messages -->
+                <AnchorPane layoutX="10" layoutY="266" prefHeight="40" prefWidth="210">
+                    <children>
+                        <ImageView fitHeight="20" fitWidth="20" layoutX="12" layoutY="13" preserveRatio="true">
+                            <image><Image url="@../../../messages.PNG" /></image>
+                        </ImageView>
+
+                        <Button id="messageButton" layoutX="35" layoutY="5" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8;                                        -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT;                                        -fx-padding: 10 15; -fx-font-size: 16px;                                        -fx-font-family: 'Segoe UI';" text="Messages" />
+                    </children>
+                </AnchorPane>
+
+                <!-- Mes trajets -->
+                <AnchorPane layoutX="10" layoutY="326" prefHeight="40" prefWidth="210">
+                    <children>
+                        <ImageView fitHeight="20" fitWidth="20" layoutX="12" layoutY="12" preserveRatio="true">
+                            <image><Image url="@../../../car.PNG" /></image>
+                        </ImageView>
+
+                        <Button id="trajetsButton" layoutX="35" layoutY="5" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8;                                        -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT;                                        -fx-padding: 10 15; -fx-font-size: 16px;                                        -fx-font-family: 'Segoe UI';" text="Mes trajets" />
+                    </children>
+                </AnchorPane>
+
+                <!-- Paramètres -->
+                <AnchorPane layoutX="10" layoutY="391" prefHeight="40" prefWidth="210">
+                    <children>
+                        <ImageView fitHeight="20" fitWidth="20" layoutX="12" layoutY="12" preserveRatio="true">
+                            <image><Image url="@../../../settings.PNG" /></image>
+                        </ImageView>
+
+                        <Button id="parametresButton" fx:id="settingButton" layoutX="35" layoutY="5" onAction="#handleSettingButton" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8;                                        -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT;                                        -fx-padding: 10 15; -fx-font-size: 16px;                                        -fx-font-family: 'Segoe UI';" text="Paramètres" />
+                    </children>
+                </AnchorPane>
+
+            </children>
+        </AnchorPane>
+
+        <!-- ===================== HEADER ===================== -->
+        <AnchorPane layoutX="233" layoutY="0" prefHeight="89" prefWidth="847">
+            <children>
+
+                <Text layoutX="33" layoutY="55" text="Publier un trajet">
+                    <font><Font name="System Bold" size="27" /></font>
+                </Text>
+
+                <Text id="profil" fx:id="userName" layoutX="751.0" layoutY="50.0" text="Yacine">
+                    <font><Font size="16" /></font>
+                </Text>
+
+                <ImageView fitHeight="41" fitWidth="42" layoutX="702.0" layoutY="23.0" preserveRatio="true">
+                    <image><Image url="@../../../profile.png" /></image>
+                </ImageView>
+
+            </children>
+        </AnchorPane>
+
+        <!-- ===================== FORMULAIRE ===================== -->
+        <AnchorPane id="publish" layoutX="270" layoutY="93" prefHeight="495" prefWidth="788" style="-fx-background-color: #ffffff; -fx-background-radius: 15;                            -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15,0,0,2);">
+
+            <children>
+
+                <Text layoutX="30" layoutY="35" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Créer un nouveau trajet" />
+
+                <Text layoutX="30" layoutY="77" text="Ville de départ" />
+                <Text layoutX="417" layoutY="77" text="Ville de déstination" />
+
+                <TextField id="depart" layoutX="30" layoutY="89" prefHeight="41" prefWidth="329" promptText="Alger" style="-fx-background-radius: 10; -fx-padding: 10;" />
+
+                <TextField id="destination" layoutX="412" layoutY="89" prefHeight="41" prefWidth="329" promptText="Oran" style="-fx-background-radius: 10; -fx-padding: 10;" />
+
+                <Text layoutX="34" layoutY="169" text="Nombre de places disponibles" />
+                <Text layoutX="415" layoutY="168" text="Prix par personne" />
+
+                <TextField id="nbrPlace" layoutX="30" layoutY="180" prefHeight="41" prefWidth="329" promptText="3" style="-fx-background-radius: 10; -fx-padding: 10;" />
+
+                <TextField id="prix" layoutX="412" layoutY="180" prefHeight="41" prefWidth="329" promptText="900 DA" style="-fx-background-radius: 10; -fx-padding: 10;" />
+
+                <Text layoutX="34" layoutY="255" text="Date et heure" />
+
+                <TextField id="date" layoutX="31" layoutY="264" prefHeight="41" prefWidth="710" promptText="15/12/2025 - 09:30" style="-fx-background-radius: 10; -fx-padding: 10;" />
+
+                <Button id="publier" layoutX="31" layoutY="363" prefHeight="45" prefWidth="710" style="-fx-background-color: #4baf50; -fx-background-radius: 10;                                -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;                                -fx-font-family: 'Segoe UI';" text="Publier le trajet" />
+
+            </children>
+        </AnchorPane>
+
+    </children>
+</AnchorPane>
