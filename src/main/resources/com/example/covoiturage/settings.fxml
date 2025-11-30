@@ -57,7 +57,7 @@
                             <image><Image url="@../../../messages.PNG" /></image>
                         </ImageView>
 
-                        <Button layoutX="35" layoutY="5" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8;                                        -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT;                                        -fx-padding: 10 15; -fx-font-size: 16px;                                        -fx-font-family: 'Segoe UI';" text="Messages" />
+                        <Button fx:id="messages" layoutX="35" layoutY="5" onAction="#handleMessagesButton" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8;                                        -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT;                                        -fx-padding: 10 15; -fx-font-size: 16px;                                        -fx-font-family: 'Segoe UI';" text="Messages" />
                     </children>
                 </AnchorPane>
 
@@ -68,7 +68,7 @@
                             <image><Image url="@../../../car.PNG" /></image>
                         </ImageView>
 
-                        <Button layoutX="35" layoutY="5" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8;                                        -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT;                                        -fx-padding: 10 15; -fx-font-size: 16px;                                        -fx-font-family: 'Segoe UI';" text="Mes trajets" />
+                        <Button fx:id="mesTrajets" layoutX="35" layoutY="5" onAction="#handleTrajetsButton" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8;                                        -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT;                                        -fx-padding: 10 15; -fx-font-size: 16px;                                        -fx-font-family: 'Segoe UI';" text="Mes trajets" />
                     </children>
                 </AnchorPane>
 

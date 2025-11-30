@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="691.0" prefWidth="1080" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.covoiturage.ProfilePassengerController">
+
+    <children>
+        <!-- ===================== MENU ===================== -->
+        <AnchorPane id="menu" layoutX="0" layoutY="0" prefHeight="693.0" prefWidth="233.0" style="-fx-background-color: #ffffff; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10,0,0,0);">
+            <!-- Votre menu existant reste inchangé -->
+            <children>
+                <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="71.0" layoutY="9.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../logo.png" />
+                    </image>
+                </ImageView>
+
+                <Text layoutX="60" layoutY="110" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Covoiturage" />
+
+                <!-- Dashboard -->
+                <AnchorPane layoutX="7.0" layoutY="204.0" prefHeight="53.0" prefWidth="210" AnchorPane.topAnchor="204.0">
+                    <children>
+                        <Button layoutX="39" layoutY="2" prefHeight="45" prefWidth="152" style="-fx-background-color: #dff0ff; -fx-background-radius: 8; -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT; -fx-padding: 10 15; -fx-font-size: 16px; -fx-font-family: 'Segoe UI';" text="Profile" />
+                        <ImageView fitHeight="20" fitWidth="20" layoutX="14.0" layoutY="17.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../profileDash.PNG" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+
+                <!-- Profil -->
+                <AnchorPane layoutX="10.0" layoutY="144.0" prefHeight="40" prefWidth="210">
+                    <children>
+                        <Button fx:id="dashboardButton" layoutX="35" layoutY="5" onAction="#handleDashboardButton" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT; -fx-padding: 10 15; -fx-font-size: 16px; -fx-font-family: 'Segoe UI';" text="Tableau de bord" />
+                        <ImageView fitHeight="20" fitWidth="20" layoutX="13.0" layoutY="15.0" preserveRatio="true">
+                            <image><Image url="@../../../dashboard.PNG" /></image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+
+                <!-- Messages -->
+                <AnchorPane layoutX="10" layoutY="266" prefHeight="40" prefWidth="210">
+                    <children>
+                        <ImageView fitHeight="20" fitWidth="20" layoutX="12" layoutY="13" preserveRatio="true">
+                            <image><Image url="@../../../messages.PNG" /></image>
+                        </ImageView>
+                        <Button fx:id="messages" layoutX="35" layoutY="5" onAction="#handleMessagesButton" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT; -fx-padding: 10 15; -fx-font-size: 16px; -fx-font-family: 'Segoe UI';" text="Messages" />
+                    </children>
+                </AnchorPane>
+
+                <!-- Mes trajets -->
+                <AnchorPane layoutX="10" layoutY="326" prefHeight="40" prefWidth="210">
+                    <children>
+                        <ImageView fitHeight="20" fitWidth="20" layoutX="12" layoutY="12" preserveRatio="true">
+                            <image><Image url="@../../../car.PNG" /></image>
+                        </ImageView>
+                        <Button fx:id="mesTrajets" layoutX="35" layoutY="5" onAction="#handleTrajetsButton" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT; -fx-padding: 10 15; -fx-font-size: 16px; -fx-font-family: 'Segoe UI';" text="Mes trajets" />
+                    </children>
+                </AnchorPane>
+
+                <!-- Paramètres -->
+                <AnchorPane layoutX="10" layoutY="391" prefHeight="40" prefWidth="210">
+                    <children>
+                        <ImageView fitHeight="20" fitWidth="20" layoutX="12" layoutY="12" preserveRatio="true">
+                            <image><Image url="@../../../settings.PNG" /></image>
+                        </ImageView>
+                        <Button fx:id="settingButton" layoutX="35" layoutY="5" onAction="#handleSettingButton" prefWidth="165" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-text-fill: #2d3436; -fx-alignment: CENTER_LEFT; -fx-padding: 10 15; -fx-font-size: 16px; -fx-font-family: 'Segoe UI';" text="Paramètres" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+
+        <!-- ===================== CARD : PROFIL ===================== -->
+        <AnchorPane layoutX="252.0" layoutY="14.0" prefHeight="130" prefWidth="800" style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12,0,0,2);">
+            <children>
+                <ImageView fitHeight="75" fitWidth="75" layoutX="25" layoutY="25" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../profile.png" />
+                    </image>
+                </ImageView>
+
+                <Text fx:id="PassengerName" layoutX="120" layoutY="55" style="-fx-font-size: 24px; -fx-font-family: 'Segoe UI'; -fx-font-weight: bold;" text="Yacine Goudjil" />
+
+                <Text layoutX="120" layoutY="80" style="-fx-font-size: 14px; -fx-font-family: 'Segoe UI'; -fx-fill: #7a7d80;" text="Passager" />
+
+                <!-- AJOUT: Labels pour les statistiques -->
+                <Text fx:id="TrajetsEff" layoutX="350" layoutY="60" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-font-family: 'Segoe UI'; -fx-fill: #4baf50;" text="3" />
+                <Text layoutX="350" layoutY="80" style="-fx-font-size: 13px; -fx-font-family: 'Segoe UI';" text="Trajets" />
+
+                <Text fx:id="EconomieReal" layoutX="450" layoutY="60" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-font-family: 'Segoe UI'; -fx-fill: #2096f3;" text="1400 DA" />
+                <Text layoutX="450" layoutY="80" style="-fx-font-size: 13px; -fx-font-family: 'Segoe UI';" text="Économies" />
+
+                <Text fx:id="MemberSince" layoutX="575" layoutY="60" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-font-family: 'Segoe UI'; -fx-fill: #ffa600;" text="2024" />
+                <Text layoutX="575" layoutY="80" style="-fx-font-size: 13px; -fx-font-family: 'Segoe UI';" text="Membre depuis" />
+            </children>
+        </AnchorPane>
+
+        <!-- ===================== CARD : INFORMATIONS PERSONNELLES ===================== -->
+        <AnchorPane layoutX="253.0" layoutY="150.0" prefHeight="273.0" prefWidth="540" style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10,0,0,2);">
+            <children>
+                <Text layoutX="30" layoutY="40" style="-fx-font-size: 18px; -fx-font-family: 'Segoe UI'; -fx-font-weight: bold;" text="Informations personnelles" />
+
+                <Text layoutX="30" layoutY="90" style="-fx-font-size: 14px;" text="Email" />
+                <Text layoutX="30" layoutY="130" style="-fx-font-size: 14px;" text="Téléphone" />
+                <Text layoutX="30" layoutY="170" style="-fx-font-size: 14px;" text="Ville" />
+                <Text layoutX="30" layoutY="210" style="-fx-font-size: 14px;" text="Membre depuis" />
+
+                <Text fx:id="PassengerEmail" layoutX="308.0" layoutY="90.0" style="-fx-font-size: 14px;" text="yacine@gmail.com" />
+                <Text fx:id="PassengerNum" layoutX="308.0" layoutY="130.0" style="-fx-font-size: 14px;" text="+213 579896527" />
+                <Text fx:id="ville" layoutX="308.0" layoutY="170.0" style="-fx-font-size: 14px;" text="Oran" />
+                <Text fx:id="trajetsEFFe" layoutX="308.0" layoutY="210.0" style="-fx-font-size: 14px;" text="2024" />
+
+                <Button fx:id="modifier" layoutX="27.0" layoutY="228.0" onAction="#handleModifierProfil" prefHeight="32" prefWidth="130" style="-fx-background-color: #4baf50; -fx-text-fill: white; -fx-background-radius: 8;" text="Modifier le profil" />
+            </children>
+        </AnchorPane>
+
+        <!-- ===================== CARD : TRAJETS RÉCENTS ===================== -->
+        <AnchorPane layoutX="250.0" layoutY="436.0" prefHeight="253.0" prefWidth="543.0" style="-fx-background-color: #ffffff;                    -fx-background-radius: 18;                    -fx-padding: 20;                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 15, 0, 0, 3);">
+
+            <children>
+
+                <!-- Titre -->
+                <Text layoutX="20.0" layoutY="30.0" style="-fx-font-size: 20px; -fx-font-family: 'Segoe UI'; -fx-font-weight: bold;" text="Trajets récents" />
+
+                <!-- ========== Trip Block 1 ========== -->
+                <AnchorPane layoutX="20.0" layoutY="39.0" prefHeight="53.0" prefWidth="483.0" style="-fx-background-color: #f7f9fb; -fx-background-radius: 10;">
+                    <children>
+
+                        <!-- Green square icon -->
+                        <ImageView fitHeight="28" fitWidth="28" layoutX="15" layoutY="16" preserveRatio="true">
+                            <image><Image url="@../../../green.PNG" /></image>
+                        </ImageView>
+
+                        <!-- Route -->
+                        <Text layoutX="55.0" layoutY="28.0" style="-fx-font-family: 'Roboto'; -fx-font-size: 14px; -fx-font-weight: bold;" text="Oran → Mascara" />
+
+                        <!-- Date -->
+                        <Text layoutX="55.0" layoutY="45.0" style="-fx-font-size: 12px; -fx-fill: #6c7a89; -fx-font-family: 'Segoe UI';" text="15 novembre 2024" />
+
+                        <!-- Price -->
+                        <Text layoutX="413.0" layoutY="30.0" style="-fx-font-size: 15px; -fx-fill: #4caf50; -fx-font-family: 'Roboto'; -fx-font-weight: bold;" text="500 DA" />
+                    </children>
+                </AnchorPane>
+
+                <!-- ========== Trip Block 2 ========== -->
+                <AnchorPane layoutX="19.0" layoutY="98.0" prefHeight="55.0" prefWidth="485.0" style="-fx-background-color: #f7f9fb; -fx-background-radius: 10;">
+                    <children>
+
+                        <ImageView fitHeight="28" fitWidth="28" layoutX="15" layoutY="16" preserveRatio="true">
+                            <image><Image url="@../../../green.PNG" /></image>
+                        </ImageView>
+
+                        <Text layoutX="55.0" layoutY="28.0" style="-fx-font-family: 'Roboto'; -fx-font-size: 14px; -fx-font-weight: bold;" text="Tiaret → Annaba" />
+
+                        <Text layoutX="55.0" layoutY="45.0" style="-fx-font-size: 12px; -fx-fill: #6c7a89; -fx-font-family: 'Segoe UI';" text="12 novembre 2024" />
+
+                        <Text layoutX="407.0" layoutY="33.0" style="-fx-font-size: 15px; -fx-fill: #4caf50; -fx-font-family: 'Roboto'; -fx-font-weight: bold;" text="1100 DA" />
+                    </children>
+                </AnchorPane>
+
+                <!-- ========== Trip Block 3 ========== -->
+                <AnchorPane layoutX="20.0" layoutY="158.0" prefHeight="55.0" prefWidth="484.0" style="-fx-background-color: #f7f9fb; -fx-background-radius: 10;">
+                    <children>
+
+                        <ImageView fitHeight="28" fitWidth="28" layoutX="15" layoutY="16" preserveRatio="true">
+                            <image><Image url="@../../../green.PNG" /></image>
+                        </ImageView>
+
+                        <Text layoutX="55.0" layoutY="28.0" style="-fx-font-family: 'Roboto'; -fx-font-size: 14px; -fx-font-weight: bold;" text="Oran → Setif" />
+
+                        <Text layoutX="55.0" layoutY="45.0" style="-fx-font-size: 12px; -fx-fill: #6c7a89; -fx-font-family: 'Segoe UI';" text="27 novembre 2024" />
+
+                        <Text layoutX="407.0" layoutY="32.0" style="-fx-font-size: 15px; -fx-fill: #4caf50; -fx-font-family: 'Roboto'; -fx-font-weight: bold;" text="1200 DA" />
+                    </children>
+                </AnchorPane>
+
+            </children>
+        </AnchorPane>
+
+
+    </children>
+</AnchorPane>

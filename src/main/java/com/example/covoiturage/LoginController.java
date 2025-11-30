@@ -153,9 +153,14 @@ public class LoginController {
 
     @FXML
     private void handleSignup() {
-        // Logique pour rediriger vers la page d'inscription
-        System.out.println("Redirection vers la page d'inscription");
-        // Ici vous changerez la scène pour aller vers l'inscription
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/covoiturage/SignIn.fxml"));
+            Stage stage = (Stage) emailField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void showAlert(String title, String message) {

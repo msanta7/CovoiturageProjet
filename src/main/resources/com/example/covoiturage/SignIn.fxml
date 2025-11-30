@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="768.0" prefWidth="958.0" style="-fx-background-color: linear-gradient(to bottom right, #6a85f1, #7f8dff);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.covoiturage.SignInController">
+
+    <!-- AnchorPane qui contient TOUT le contenu de la carte -->
+    <AnchorPane layoutX="203.0" layoutY="36.0" prefHeight="696.0" prefWidth="500.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 20, 0, 0, 10);">
+
+        <!-- Titre -->
+        <Text layoutX="115.0" layoutY="116.0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: #2d3436;" text="Créer un compte " />
+
+        <!-- Label + Champ Email -->
+        <Label layoutX="47.0" layoutY="124.0" style="-fx-font-size: 16px; -fx-text-fill: #2d3436;" text="Nom" />
+        <TextField fx:id="nomField" layoutX="47.0" layoutY="149.0" prefHeight="50" prefWidth="201.0" promptText="Jhon" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #f0f2f5; -fx-border-color: #dcdde1; -fx-padding: 0 15; -fx-font-size: 16px;" />
+
+        <!-- Label + Champ Password -->
+        <Label layoutX="47.0" layoutY="199.0" style="-fx-font-size: 16px; -fx-text-fill: #2d3436;" text="Numéro de téléphone" />
+        <TextField fx:id="numField" layoutX="47.0" layoutY="224.0" prefHeight="50" prefWidth="400.0" promptText="+213 05 57 56 36 98" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #f0f2f5; -fx-border-color: #dcdde1; -fx-padding: 0 15; -fx-font-size: 16px;" />
+        <TextField fx:id="email" layoutX="47.0" layoutY="301.0" prefHeight="50" prefWidth="400.0" promptText="test@email.com" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #f0f2f5; -fx-border-color: #dcdde1; -fx-padding: 0 15; -fx-font-size: 16px;" />
+
+        <Button fx:id="create" layoutX="43.0" layoutY="617.0" prefHeight="55" prefWidth="400.0" style="-fx-background-color: #933cc3; -fx-text-fill: white; -fx-background-radius: 10; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);" styleClass="create" text="Créer un compte " />
+        <TextField fx:id="prenom" layoutX="266.0" layoutY="149.0" prefHeight="50" prefWidth="178.0" promptText="Lennon" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #f0f2f5; -fx-border-color: #dcdde1; -fx-padding: 0 15; -fx-font-size: 16px;" />
+        <Label layoutX="266.0" layoutY="124.0" style="-fx-font-size: 16px; -fx-text-fill: #2d3436;" text="Prénom" />
+        <Label layoutX="46.0" layoutY="276.0" style="-fx-font-size: 16px; -fx-text-fill: #2d3436;" text="Email" />
+        <PasswordField fx:id="passwordField" layoutX="45.0" layoutY="383.0" prefHeight="50" prefWidth="400.0" promptText="*********" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #f0f2f5; -fx-border-color: #dcdde1; -fx-padding: 0 15; -fx-font-size: 16px;" />
+        <Label layoutX="42.0" layoutY="357.0" style="-fx-font-size: 16px; -fx-text-fill: #2d3436;" text="mot de passe" />
+        <ImageView fitHeight="84.0" fitWidth="73.0" layoutX="208.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../profile.png" />
+            </image>
+        </ImageView>
+        <AnchorPane layoutX="42.0" layoutY="473.0" prefHeight="92.0" prefWidth="406.0" style="-fx-background-color: rgba(106, 130, 149, 0.1); -fx-border-radius: 20; -fx-background-radius: 20;">            <children>
+                <Label layoutX="41.0" layoutY="33.0" prefHeight="17.0" prefWidth="290.0" text="Contient des majuscules et des minuscules " textFill="#949494">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="41.0" layoutY="6.0" prefHeight="17.0" prefWidth="228.0" text="Au moins 8 caracters" textFill="#949494">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="41.0" layoutY="62.0" prefHeight="17.0" prefWidth="244.0" text="Contient des chiffres et des symboles" textFill="#949494">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="16.0" fitWidth="15.0" layoutX="17.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../right (2).png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="16.0" fitWidth="15.0" layoutX="17.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../right (2).png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="16.0" fitWidth="15.0" layoutX="18.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../right (2).png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="40.0" layoutY="569.0" prefHeight="43.0" prefWidth="406.0" styleClass="rules">
+            <children>
+                <Label layoutX="36.0" layoutY="9.0" prefHeight="17.0" prefWidth="284.0" text="J'accepte les conditions d'utilisation" textFill="#6b5555">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <CheckBox fx:id="accept" layoutX="11.0" layoutY="13.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="19.0" style="-fx-background-color: white; -fx-background-insets: 0; -fx-background-radius: 3;" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="41.0" layoutY="434.0" prefHeight="43.0" prefWidth="406.0" styleClass="rules">
+            <children>
+                <Label layoutX="36.0" layoutY="9.0" prefHeight="26.0" prefWidth="343.0" text="créer ce compte en tant que conducteur" textFill="#6b5555">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <CheckBox fx:id="conducteurRole" layoutX="11.0" layoutY="13.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="19.0" style="-fx-background-color: white; -fx-background-insets: 0; -fx-background-radius: 3;" />
+            </children>
+        </AnchorPane>
+
+    </AnchorPane>
+
+</AnchorPane>

@@ -17,6 +17,8 @@ public class SettingsController {
     private Button dashboardButton;
     @FXML
     private Button profileButton;
+    @FXML
+    private Button mesTrajets;
 
     @FXML
     private void handleSuppAccClick() {
@@ -34,6 +36,43 @@ public class SettingsController {
 
             }
         });
+    }
+
+
+    @FXML
+    private void handleTrajetsButton(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/covoiturage/mesTrajets.fxml"));
+            Parent root = loader.load();
+
+
+            Scene currentScene = mesTrajets.getScene();
+
+
+            currentScene.setRoot(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Erreur lors du chargement de la page de profil");
+        }
+    }
+
+    @FXML
+    private Button messages;
+
+    @FXML
+    private void handleMessagesButton(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/covoiturage/PassengerDashboard.fxml"));
+            Parent root = loader.load();
+
+            Scene currentScene = messages.getScene();
+            currentScene.setRoot(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
